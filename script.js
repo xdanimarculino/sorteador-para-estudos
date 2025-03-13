@@ -23,7 +23,9 @@ function sortearAmigo() {
     exibirTextoNaTela('p', 'Digite um nome antes de sortear');
     return;
   }
-  let sorteado = nomes[Math.floor(Math.random() * nomes.length)]; //sorteado é igual a "nomes" que é o nome do meu array. aqui eu quero sortear um nome aleatório que está na lista, então posso usar o Math.random que gera um número decimal entre 0 e 1, mas ele não vai e retornar um número, porque dentro do array tem nomes, e eles são listados automaticamente em números. quando fazemos *nomes.length é para que esse número gerado pelo math.random se multiplique até a quantidade de itens adicionados na lista. e o math.floor é para arredondar o número para baixo, para que não haja problemas e o comando me retorne um item correto da lista.
+  let indiceSorteado = Math.floor(Math.random() * nomes.length); //indiceSorteado é igual a "nomes" que é o nome do meu array. aqui eu quero sortear um nome aleatório que está na lista, então posso usar o Math.random que gera um número decimal entre 0 e 1, mas ele não vai e retornar um número, porque dentro do array tem nomes, e eles são listados automaticamente em números. quando fazemos *nomes.length é para que esse número gerado pelo math.random se multiplique até a quantidade de itens adicionados na lista. e o math.floor é para arredondar o número para baixo, para que não haja problemas e o comando me retorne um item correto da lista.
+  let sorteado = nomes[indiceSorteado];
+  nomes.splice(indiceSorteado, 1);
   exibirTextoNaTela('p', `Seu amigo secreto é: ${sorteado}`);
   
   //adicionei ao html uma bibliotetca pronta de coisinhas de efeitos visuais, ai vim aqui no js, e posso chamar esse efeito que adicionei, aonde eu quero que surja.
